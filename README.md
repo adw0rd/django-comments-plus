@@ -1,7 +1,7 @@
 django-comment-plus
 ===================
 
-Extended version of django.contrib.comment
+Extended version of django.contrib.comments
 
 Features
 ---------
@@ -15,5 +15,5 @@ Features
 TODO
 ------
 
-* The complete code coverage;
+* The complete code coverage of tests;
 * Branching of the comment list.
