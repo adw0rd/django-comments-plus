@@ -1,7 +1,7 @@
 django-comment-plus
 ===================
 
-Extended version of django.contrib.comment
+Extended version of django.contrib.comments
 
 Features
 ---------
