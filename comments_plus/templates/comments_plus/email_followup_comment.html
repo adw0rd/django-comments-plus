@@ -1,0 +1,15 @@
+{% load i18n %}{% autoescape off %}
+{% trans "You're receiving this email because subscribed to comments to" %} "{{ target.get_name }}".<br />
+<a href="{{ protocol }}://{{ site_domain }}{{ target.get_absolute_url }}">{{ protocol }}://{{ site_domain }}{{ target.get_absolute_url }}</a><br />
+<br />
+{% if comment_user_name %}{% blocktrans %}The user "{{ comment_user_name }}" say:{% endblocktrans %}<br />{% endif %}
+<blockquote>{{ comment_comment|safe }}</blockquote>
+<br />
+{% trans "Comment published" %}: {{ comment.submit_date }}<br />
+<br />
+{% trans "To unsubscribe, go to" %}: <a href="{{ protocol }}://{{ site_domain }}{{ unsubscribe_url }}">{{ protocol }}://{{ site_domain }}{{ unsubscribe_url }}</a><br />
+{% trans "To manage subscriptions, go to" %}: <a href="{{ protocol }}://{{ site_domain }}{{ subscriptions_manage_url }}">{{ protocol }}://{{ site_domain }}{{ subscriptions_manage_url }}</a><br />
+<br />
+---<br />
+{% blocktrans %}The {{ site_name }} team{% endblocktrans %}
+{% endautoescape %}

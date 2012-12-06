@@ -1,0 +1,31 @@
+{% load i18n %}{% autoescape off %}
+{% blocktrans %}You're receiving this email because you commented a {{ target_name }} at {{ site_name }}.{% endblocktrans %}<br />
+<a href="{{ protocol }}://{{ site_domain }}{{ target_link }}">{{ protocol }}://{{ site_domain }}{{ target_link }}</a><br />
+<br />
+{% trans "Thank you for registration" %}, {{ user_data.username }}!<br />
+<table>
+    <tr>
+        <th colspan="2">{% trans "Your authorization data" %}</td>
+    </tr>
+    <tr>
+        <td>{% trans "Username" %}:</td>
+        <td>{{ user_data.username }}</td>
+    </tr>
+    <tr>
+        <td>{% trans "Email" %}:</td>
+        <td>{{ user_data.email }}</td>
+    </tr>
+    <tr>
+        <td>{% trans "Password" %}:</td>
+        <td>{{ user_data.password }}</td>
+    <tr>
+</table>
+<br />
+{% trans "To activate an account and publish your comments please go to" %}:<br />
+<a href="{{ protocol }}://{{ site_domain }}{{ confirmation_url }}">{{ protocol }}://{{ site_domain }}{{ confirmation_url }}</a><br />
+<br />
+{% trans "Thanks for using our site!" %}<br />
+<br />
+---<br />
+{% blocktrans %}The {{ site_name }} team{% endblocktrans %}
+{% endautoescape %}
