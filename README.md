@@ -15,5 +15,5 @@ Features
 TODO
 ------
 
-* The complete code coverage;
+* The complete code coverage of tests;
 * Branching of the comment list.
