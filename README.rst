@@ -17,3 +17,17 @@ TODO
 
 * The complete code coverage of tests;
 * Branching of the comment list.
+
+Installation
+-------------
+::
+
+    INSTALLED_APPS = (
+        ...
+        'comments_plus',
+        ...
+    )
+    COMMENTS_APP = "comments_plus"
+    COMMENTS_PLUS_CONFIRM_EMAIL = True
+    COMMENTS_PLUS_AUTO_USET_REGISTRATION = True
+    COMMENTS_PLUS_IGNORE_FIELDS = ['url', ]
