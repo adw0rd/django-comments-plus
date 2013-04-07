@@ -23,7 +23,7 @@ class CommentPlusManager(models.Manager):
 
 class CommentPlus(Comment):
     followup = models.BooleanField(help_text=_("Receive by email further comments in this conversation"), blank=True)
-    is_review = models.BooleanField(default=False)
+    is_review = models.BooleanField(default=False, db_index=True)
     REVIEW_TYPE_CHOICES = (
         ('positive', u'Положительная'),
         ('neutral', u'Нейтральная'),
@@ -35,7 +35,7 @@ class CommentPlus(Comment):
         'negative': '#ffefef',
     }
 
-    review_type = models.CharField(choices=REVIEW_TYPE_CHOICES, max_length=8, null=True, blank=True)
+    review_type = models.CharField(choices=REVIEW_TYPE_CHOICES, max_length=8, null=True, blank=True, db_index=True)
     review_title = models.CharField(max_length=100, null=True, blank=True)
 
     def review_type_color(self):
